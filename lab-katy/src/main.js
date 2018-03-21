@@ -1,6 +1,6 @@
 'use strict';
 
-import './style.main.scss';
+import './style/main.scss';
 
 import React from 'react';
 import ReactDom from 'react-dom';
@@ -14,7 +14,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       notes: [],
-      //what the hell goes here idk
+      //anything else go here?
     }
 
     this.getApp = this.getApp.bind(this);
@@ -32,6 +32,17 @@ class App extends React.Component {
   }
 
   render() {
-    return() //TODO return JSX layer later
+    return(
+      <main>
+        <BrowserRouter>
+          <section>
+            <Route exact path='/landing' component={LandingContainer} />
+            <Route exact path='/dashboard' component={() => <DashboardContainer app={this.getApp()} />} />
+          </section>
+        </BrowserRouter>
+      </main>
+    ) 
   }
 }
+
+ReactDom.render(<App />, document.getElementById('root'));

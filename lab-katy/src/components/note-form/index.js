@@ -32,12 +32,14 @@ class NoteForm extends React.Component {
           <input 
             name='title'
             type='text'
+            placeholder='add title'
             value={this.state.title}
             onChange={this.handleChange} />
           
           <input
             name='content'
             type='text'
+            placeholder='add content'
             value={this.state.content}
             onChange={this.handleChange} />
 

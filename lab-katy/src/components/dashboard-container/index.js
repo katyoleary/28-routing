@@ -1,6 +1,6 @@
 'use strict';
 
-import './dashboard.scss';
+import './_dashboard.scss';
 import React from 'react';
 import uuid from 'uuid/v1';
 
@@ -22,10 +22,13 @@ class DashboardContainer extends React.Component {
   }
 
   render() {
-    <div className='dashboard-container'>
-      <NoteForm handleAddNote={this.addNote} />
-    </div>
+    return (
+      <div className='dashboard-container'>
+        <NoteForm handleAddNote={this.addNote} />
+      </div>
     //add div with note list here
+    )
   }
-
 }
+
+export default DashboardContainer;
