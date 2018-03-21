@@ -44,6 +44,7 @@ class NoteForm extends React.Component {
             onChange={this.handleChange} />
 
           <button type='submit'>add note</button>
+          
         </form> 
       )
     }
