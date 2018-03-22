@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import NoteForm from 'note-form';
+import NoteForm from '../note-form';
 
 class NoteItem extends React.Component {
   constructor(props) {
@@ -12,8 +12,8 @@ class NoteItem extends React.Component {
   render() {
     return (
       <section>
-        <h3>{this.state.note.title}</h3> //dunno
-        <p>{this.state.note.content}</p>
+        <h3>{this.props.note.title}</h3>
+        <p>{this.props.note.content}</p>
       </section>
     ) 
   }

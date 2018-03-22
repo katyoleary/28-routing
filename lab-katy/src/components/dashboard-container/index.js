@@ -25,15 +25,15 @@ class DashboardContainer extends React.Component {
   }
 
   deleteNote(note) {
-    //need help here
+    //need help here. maybe find index by note.id then splice()?
   }
 
   render() {
     return (
       <div className='dashboard-container'>
         <NoteForm handleAddNote={this.addNote} />
+        <NoteList fuckMe={this.props.app.state.notes} />
       </div>
-    //add div with note list here
     )
   }
 }
