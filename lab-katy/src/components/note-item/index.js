@@ -3,6 +3,7 @@
 import React from 'react';
 
 import NoteForm from '../note-form';
+import NoteUpdateForm from '../note-update-form';
 
 class NoteItem extends React.Component {
   constructor(props) {
@@ -10,11 +11,14 @@ class NoteItem extends React.Component {
   }
 
   render() {
+    console.log('hi', this.props);
     return (
-      <section>
+      <li>
+        <button onClick={() => this.props.removeNote(this.props.note)}>X</button>
         <h3>{this.props.note.title}</h3>
         <p>{this.props.note.content}</p>
-      </section>
+        <NoteUpdateForm note={this.props.note} app={this.props.app}/>
+      </li>
     ) 
   }
 }

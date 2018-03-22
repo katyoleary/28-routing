@@ -12,7 +12,7 @@ class DashboardContainer extends React.Component {
   constructor(props) {
     super(props);
     this.addNote = this.addNote.bind(this);
-    this.deleteNote = this.deleteNote.bind(this);
+    this.removeNote = this.removeNote.bind(this);
   }
 
   addNote(note) {
@@ -24,15 +24,21 @@ class DashboardContainer extends React.Component {
     }));
   }
 
-  deleteNote(note) {
-    //need help here. maybe find index by note.id then splice()?
+  removeNote(note) {
+    let {app} = this.props;
+    app.setState( prevState => ({
+      notes: prevState.notes.filter((item) => {
+        return item.id !== note.id;
+      })
+    }));
   }
 
   render() {
+    console.log(this.props.app);
     return (
       <div className='dashboard-container'>
         <NoteForm handleAddNote={this.addNote} />
-        <NoteList fuckMe={this.props.app.state.notes} />
+        <NoteList fuckMe={this.props.app.state.notes} removeNote={this.removeNote} app={this.props.app}/>
       </div>
     )
   }
