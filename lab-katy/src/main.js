@@ -8,6 +8,7 @@ import {BrowserRouter, Route} from 'react-router-dom';
 
 import LandingContainer from './components/landing-container';
 import DashboardContainer from './components/dashboard-container';
+import Navbar from './components/navbar-container';
 
 class App extends React.Component {
   constructor(props) {
@@ -34,9 +35,10 @@ class App extends React.Component {
   render() {
     return(
       <main>
+        <Navbar />
         <BrowserRouter>
           <section>
-            <Route exact path='/landing' component={LandingContainer} />
+            <Route exact path='/' component={LandingContainer} />
             <Route exact path='/dashboard' component={() => <DashboardContainer app={this.getApp()} />} />
           </section>
         </BrowserRouter>
