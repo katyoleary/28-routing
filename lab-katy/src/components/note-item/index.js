@@ -11,7 +11,6 @@ class NoteItem extends React.Component {
   }
 
   render() {
-    console.log('hi', this.props);
     return (
       <li>
         <button onClick={() => this.props.removeNote(this.props.note)}>X</button>

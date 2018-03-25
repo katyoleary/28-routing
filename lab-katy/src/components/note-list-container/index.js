@@ -11,13 +11,10 @@ class NoteList extends React.Component {
   }
 
   render() {
-    console.log('notelsit', this.props);
     return (
       <section className='notes-list'>
         <h1>notes.</h1>
         <ul> 
-        
-          {/* {this.props.fuckMe.map} */}
           {this.props.fuckMe.map((note, i) => //li key impt for diffing algorithm on the dom obj. INTERVIEW QUESTION
                 <NoteItem note={note} removeNote={this.props.removeNote} key={i} app={this.props.app}/>
             )
